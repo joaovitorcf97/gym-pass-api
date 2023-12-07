@@ -11,7 +11,7 @@ describe('Get User Metrics UseCase', () => {
     sut = new GetUserMetricsUseCase(checkInsRepository);
   });
 
-  it('should be able to fetch check in history', async () => {
+  it('should be able to get user metrics', async () => {
     await checkInsRepository.create({
       gym_id: 'gym-01',
       user_id: 'user-01',
