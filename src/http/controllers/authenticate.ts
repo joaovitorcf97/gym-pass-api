@@ -9,7 +9,9 @@ export async function authenticate(
 ) {
   const authenticateBodySchema = z.object({
     email: z.string().email(),
-    password: z.string().min(6),
+    password: z
+      .string()
+      .min(6, { message: 'A senha deve ter no minimo 6 carateres.' }),
   });
 
   const { email, password } = authenticateBodySchema.parse(request.body);
